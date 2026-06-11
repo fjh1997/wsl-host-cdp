@@ -1,6 +1,17 @@
 # WSL Host CDP
 
-在 WSL 里连接 Windows 宿主机的 Edge / Chrome 浏览器 CDP 端口。
+Connect WSL to the Windows host Edge / Chrome browser through CDP, using `ncat` to bridge the host-only DevTools port into WSL.
+
+在 WSL 里连接 Windows 宿主机的 Edge / Chrome 浏览器 CDP 端口，通过 `ncat` 把只监听宿主机回环地址的 DevTools 端口桥接到 WSL。
+
+## Overview / 简介
+
+This skill is useful when:
+
+- An agent running in WSL needs to inspect or control the Windows host browser instead of launching a separate Linux browser.
+- Edge / Chrome DevTools is listening only on Windows `127.0.0.1`, so WSL cannot reach it directly.
+- Browser login state, cookies, or already-open tabs from the host browser need to be reused inside WSL automation.
+- `web-access`, a CDP proxy, or similar browser-discovery tooling fails because WSL cannot see the Windows browser debug port.
 
 这个 skill 适合解决这类问题：
 
