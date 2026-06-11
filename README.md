@@ -25,6 +25,44 @@ WSL 工具
 
 脚本还会在 WSL 里写入对应的 `DevToolsActivePort` 文件，让依赖 Chromium 自动发现逻辑的工具能像发现本地浏览器一样发现宿主机浏览器。
 
+## 安装
+
+**方式一：npx skills 一键安装（推荐）**
+
+```bash
+npx skills add fjh1997/wsl-host-cdp
+```
+
+如果想安装到用户级全局 skill 目录：
+
+```bash
+npx skills add fjh1997/wsl-host-cdp -g
+```
+
+如果只想安装到 Codex：
+
+```bash
+npx skills add fjh1997/wsl-host-cdp --agent codex
+```
+
+先查看仓库里有哪些 skill，不执行安装：
+
+```bash
+npx skills add fjh1997/wsl-host-cdp --list
+```
+
+> 当前仓库如果保持 private，安装环境需要有可访问该仓库的 GitHub 凭据。若希望任何人都能直接执行上面的命令安装，需要把仓库改为 public。
+
+安装后重启 Codex / 对应 Agent，让新 skill 被重新加载。
+
+**方式二：手动 clone**
+
+```bash
+git clone https://github.com/fjh1997/wsl-host-cdp.git ~/.codex/skills/wsl-host-cdp
+```
+
+然后重启 Codex。
+
 ## 前置条件
 
 - WSL 里有 Node.js 22+。
@@ -118,4 +156,3 @@ node /path/to/web-access/scripts/check-deps.mjs --browser edge
 - 不要把转发端口暴露到公网或局域网。
 - `DevToolsActivePort` 里包含浏览器 WebSocket 路径，通常不应提交到仓库。
 - 宿主机浏览器的登录态等同于你的账号权限，自动化操作前要确认目标站点风险。
-
