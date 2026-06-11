@@ -1,0 +1,4 @@
+interface:
+  display_name: "WSL Host CDP"
+  short_description: "Connect WSL to host Edge or Chrome CDP"
+  default_prompt: "Use $wsl-host-cdp to connect WSL to the Windows host Edge or Chrome browser through CDP."
