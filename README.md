@@ -1,8 +1,8 @@
-# WSL Host CDP
+# WSL Host CDP Skill
 
 Connect WSL to the Windows host Edge / Chrome browser through CDP, using `ncat` to bridge the host-only DevTools port into WSL.
 
-在 WSL 里连接 Windows 宿主机的 Edge / Chrome 浏览器 CDP 端口，通过 `ncat` 把只监听宿主机回环地址的 DevTools 端口桥接到 WSL。
+在 WSL 里连接 Windows 宿主机的 Edge / Chrome 浏览器 CDP 端口的skill，通过 `ncat` 把只监听宿主机回环地址的 DevTools 端口桥接到 WSL。
 
 ## Overview / 简介
 
